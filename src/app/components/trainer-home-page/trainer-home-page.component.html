@@ -1,0 +1,19 @@
+<h1>Trainer Home Page</h1>
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trainer of trainers">
+        <td>{{ trainer.id }}</td>
+        <td>{{ trainer.firstName }}</td>
+        <td>{{ trainer.surName }}</td>
+        <td>{{ trainer.isMale }}</td>
+        <td>{{ trainer.birthdate }}</td>
+        <td>{{ trainer.phoneNumber }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
