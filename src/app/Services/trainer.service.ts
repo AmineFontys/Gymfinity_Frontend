@@ -32,4 +32,6 @@ export class TrainerService {
   deleteTrainer(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/api/trainer/${id}`);
   }
+
+  
 }

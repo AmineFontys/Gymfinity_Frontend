@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TrainerHomePageComponent } from './components/trainer-home-page/trainer-home-page.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { TrainerHomePageComponent } from './components/trainer-home-page/trainer
     HttpClientModule,
     HomeComponent,
     HeaderComponent,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

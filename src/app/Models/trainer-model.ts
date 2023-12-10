@@ -1,5 +1,7 @@
+import { Guid } from "guid-typescript";
+
 export interface TrainerModel {
-    id: string;
+    id: Guid;
     firstName: string;
     surName: string;
     birthdate: Date;

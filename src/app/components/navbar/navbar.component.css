@@ -2,6 +2,12 @@
 {
     background-color: rgba(230, 20, 20, 0.914);
     height: 65px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
 }
 img, svg {
     width: 150px;

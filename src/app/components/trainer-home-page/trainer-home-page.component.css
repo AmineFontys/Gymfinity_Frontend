@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/crossfit-fuengirola-slide03.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+
+}
+
+.trainerbtn{
+    background-color: rgba(239, 9, 9, 0.534);
+    background-size: fit;
+    border: none;
+    padding: 45px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-grid;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-left: 50px;
+
+}
+.trainerbtn button {
+    margin-bottom: 10px; /* Adjust as needed */
+}
+.title{
+    color: white;
+    font-size: 35px;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+.trainerTable{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    
+    border-radius: 10px;
+    padding: 20px;
+    
+}
+.trainerInfoTable{
+    color: white;
+    background-color: rgba(239, 9, 9, 0.534);
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}

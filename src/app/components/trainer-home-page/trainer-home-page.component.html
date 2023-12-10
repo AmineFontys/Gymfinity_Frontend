@@ -1,19 +1,95 @@
-<h1>Trainer Home Page</h1>
-<table>
-    <thead>
+
+<div class="bg">
+  <h1 class="title">Trainer Home Page</h1>
+ <section class="trainerbtn">
+  <button type="button" class="btn btn-outline-success"(click)="toggleTrainerInfoVisibility()">Show Trainer Information</button>
+  <button type="button" class="btn btn-outline-success"(click)="toggleMemberInfoVisibility()">Show Member Information</button>
+  <button type="button" class="btn btn-outline-success"(click)="toggleCreateExerciseVisibility()">Show Trainer Information</button>
+ </section>
+  <section class="trainerTable">
+    
+    <table class="table" *ngIf="showTrainerInfo" Class="trainerInfoTable">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Phonenumber</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let trainer of trainers">
+      <td>{{ trainer.id }}</td>
+      <td>{{ trainer.firstName }}</td>
+      <td>{{ trainer.surName }}</td>
+      <td>{{ trainer.phoneNumber }}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <table class="table" *ngIf="ShowMemberInfo" Class="trainerInfoTable">
+    <thead class="thead-dark">
       <tr>
-        <th>ID</th>
+        <th scope="col">ID</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Phonenumber</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let trainer of trainers">
-        <td>{{ trainer.id }}</td>
-        <td>{{ trainer.firstName }}</td>
-        <td>{{ trainer.surName }}</td>
-        <td>{{ trainer.isMale }}</td>
-        <td>{{ trainer.birthdate }}</td>
-        <td>{{ trainer.phoneNumber }}</td>
+      <tr *ngFor="let member of members">
+        <td>{{ member.id }}</td>
+        <td>{{ member.firstName }}</td>
+        <td>{{ member.surname }}</td>
+        <td>{{ member.phoneNumber }}</td>
       </tr>
     </tbody>
   </table>
+</div>
+<div>
+  <section *ngIf="showCreateExercise" class="createExerciseForm">
+    <h2>Create New Exercise</h2>
+    <form (submit)="createExercise()">
+      <div class="form-group">
+        <label for="exerciseName">Exercise Name:</label>
+        <input type="text" id="exerciseName" name="exerciseName" [(ngModel)]="newExercise.name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="muscleGroup">Muscle Group:</label>
+        <input type="text" id="muscleGroup" name="muscleGroup" [(ngModel)]="newExercise.muscleGroup" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" [(ngModel)]="newExercise.description" required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="reps">Reps:</label>
+        <input type="number" id="reps" name="reps" [(ngModel)]="newExercise.reps" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="sets">Sets:</label>
+        <input type="number" id="sets" name="sets" [(ngModel)]="newExercise.sets" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" name="weight" [(ngModel)]="newExercise.weight" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="restTime">Rest Time:</label>
+        <input type="number" id="restTime" name="restTime" [(ngModel)]="newExercise.restTime" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Create Exercise</button>
+    </form>
+  </section>
+</div>
+  </section>
+</div>
+
   
