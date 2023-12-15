@@ -2,7 +2,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ExerciseModel } from '../Models/exercise-model'; // Assuming you have an ExerciseModel defined
+import { ExerciseModel } from '../Models/exercise-model'; 
+import { Guid } from 'guid-typescript';
+import {createExerciseModel} from '../Models/createExercise-model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +22,8 @@ export class ExerciseService {
     return this.http.get<ExerciseModel>(`${this.apiUrl}/api/exercise/${id}`);
   }
 
-  createExercise(exercise: ExerciseModel): Observable<ExerciseModel> {
-    return this.http.post<ExerciseModel>(`${this.apiUrl}/api/exercise`, exercise);
+  createExercise(CreateExercise: createExerciseModel): Observable<createExerciseModel> {
+    return this.http.post<createExerciseModel>(`${this.apiUrl}/api/exercise`, CreateExercise);
   }
 
   updateExercise(id: string, exercise: ExerciseModel): Observable<void> {

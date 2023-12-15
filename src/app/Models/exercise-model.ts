@@ -9,4 +9,5 @@ export interface ExerciseModel {
   sets: number;
   weight: number;
   restTime: number;
+  duration: number;
 }

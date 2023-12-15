@@ -10,24 +10,32 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TrainerHomePageComponent } from './components/trainer-home-page/trainer-home-page.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChatComponent } from './chat/chat.component';
+import { JoinRoomComponent } from './join-room/join-room.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    
-    FooterComponent,
+    HomeComponent,
+    HeaderComponent,
     NavbarComponent,
+    FooterComponent,
     TrainerHomePageComponent,
+    ChatComponent,
+    JoinRoomComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
     MatToolbarModule,
     NgbModule,
     HttpClientModule,
-    HomeComponent,
-    HeaderComponent,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
