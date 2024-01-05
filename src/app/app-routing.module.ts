@@ -8,6 +8,9 @@ import { TrainerHomePageComponent } from './components/trainer-home-page/trainer
 import { ChatComponent } from './chat/chat.component';
 import { JoinRoomComponent } from './join-room/join-room.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CreateMemberComponent } from './components/create-member/create-member.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,7 +21,10 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'join-room', component: JoinRoomComponent },
   { path: 'welcome', component: WelcomeComponent }, 
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'create-member', component: CreateMemberComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent }
 
 ];
 

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MemberModel } from '../Models/member-model';
+import { createMember } from '../Models/create-member-model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class MemberService {
     return this.http.get<MemberModel>(`${this.apiUrl}/api/member/${id}`);
   }
 
-  createMember(member: MemberModel): Observable<MemberModel> {
-    return this.http.post<MemberModel>(`${this.apiUrl}/api/member`, member);
+  createMember(newMember: createMember): Observable<createMember> {
+    return this.http.post<createMember>(`${this.apiUrl}/api/member`, newMember);
   }
 
   updateMember(id: string, member: MemberModel): Observable<void> {

@@ -14,9 +14,7 @@ export class TrainerService {
   private wsSubject: WebSocketSubject<any> | undefined;
 
   constructor(private http: HttpClient) { }
-  private createWebSocketConnection(): WebSocketSubject<any> {
-    return webSocket(`${this.apiUrl}/api/trainer/ws`);
-  }
+ 
   getAllTrainers(): Observable<TrainerModel[]> {
     return this.http.get<TrainerModel[]>(`${this.apiUrl}/api/trainer`);
   }
@@ -37,22 +35,7 @@ export class TrainerService {
     return this.http.delete<void>(`${this.apiUrl}/api/trainer/${id}`);
   }
 
-  connectWebSocket(): Observable<any> {
-    this.wsSubject = this.createWebSocketConnection();
-    return this.wsSubject.asObservable();
-  }
 
-  sendWebSocketMessage(message: any): void {
-    if (this.wsSubject) {
-      this.wsSubject.next(message);
-    }
-  }
-
-  closeWebSocketConnection(): void {
-    if (this.wsSubject) {
-      this.wsSubject.complete();
-    }
-  }
 }
   
 

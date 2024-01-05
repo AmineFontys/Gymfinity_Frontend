@@ -14,6 +14,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChatComponent } from './chat/chat.component';
 import { JoinRoomComponent } from './join-room/join-room.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CreateMemberComponent } from './components/create-member/create-member.component';
+import { TrainerManagementComponent } from './components/trainer-management/trainer-management.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomepagememberComponent } from './homepagemember/homepagemember.component';
 
 
 @NgModule({
@@ -27,6 +32,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ChatComponent,
     JoinRoomComponent,
     WelcomeComponent,
+    CreateMemberComponent,
+    TrainerManagementComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomepagememberComponent,
   ],
   imports: [
     BrowserModule,

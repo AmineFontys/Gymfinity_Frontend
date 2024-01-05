@@ -6,12 +6,7 @@ import { MemberService } from '../../Services/member.service';
 import { ExerciseModel } from 'src/app/Models/exercise-model';
 import { ExerciseService } from 'src/app/Services/exercise.service';
 import { createExerciseModel } from 'src/app/Models/createExercise-model';
-import { Guid } from 'guid-typescript';
-import { timer } from 'rxjs';
-import { take } from 'rxjs/operators';
-import { OnDestroy } from '@angular/core';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { WebsocketService } from 'src/app/Services/web-socket.service';
 
 @Component({
   selector: 'app-trainer-home-page',
@@ -19,7 +14,6 @@ import { Subject } from 'rxjs';
   styleUrls: ['./trainer-home-page.component.css']
 })
 export class TrainerHomePageComponent implements OnInit {
-  private ngUnsubscribe = new Subject();
   trainers: TrainerModel[] = [];
   members: MemberModel[] = [];
   exercises: ExerciseModel[] = [];
@@ -46,22 +40,31 @@ export class TrainerHomePageComponent implements OnInit {
     restTime: 0,
     duration: 0
   };
+  receivedMessages: string[] = [];
+
 
   constructor(
     private trainerService: TrainerService,
     private memberService: MemberService,
     private exerciseService: ExerciseService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private websocketService: WebsocketService
   ) {}
 
   ngOnInit(): void {
     this.getAllTrainers();
     this.getAllMembers();
     this.getAllExercises();
+
     
     
   }
 
+  sendMessage(): void {
+    console.log('Sending message...');
+    const message = 'Hello from Angular!' ;
+    this.websocketService.sendMessage(message);
+}
   getAllExercises(): void {
     this.exerciseService.getAllExercises().subscribe(
       (exercises) => {

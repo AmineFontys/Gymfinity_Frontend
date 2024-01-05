@@ -4,7 +4,8 @@
  <section class="trainerbtn">
   <button type="button" class="btn btn-outline-success"(click)="toggleTrainerInfoVisibility()">Show Trainer Information</button>
   <button type="button" class="btn btn-outline-success"(click)="toggleMemberInfoVisibility()">Show Member Information</button>
-  <button type="button" class="btn btn-outline-success"(click)="toggleCreateExerciseVisibility()">Show Trainer Information</button>
+  <button type="button" class="btn btn-outline-success"(click)="sendMessage()">sendMessage</button>
+  <button type="button" class="btn btn-outline-success"[routerLink]="['/create-member']">Create new member</button>
  </section>
   <section class="trainerTable">
     
@@ -40,7 +41,7 @@
       <tr *ngFor="let member of members">
         <td>{{ member.id }}</td>
         <td>{{ member.firstName }}</td>
-        <td>{{ member.surname }}</td>
+        <td>{{ member.surName }}</td>
         <td>{{ member.phoneNumber }}</td>
       </tr>
     </tbody>
